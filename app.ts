@@ -1,68 +1,17 @@
-const pessoa = {
-    nome: 'Mariana',
-    idade: 28,
-    profissao: 'desenvolvedora'
-};
+let valorAny: any;
+valorAny = 3;
+valorAny = 'Olá!';
+valorAny = true;
 
-pessoa.idade = 29;
+let valorString: string = 'teste';
+// valorString = 3;
+// valorString = true;
+valorString = valorAny; // Temos um problema aqui... Mas é permitido pelo TypeScript.
+let valorString2: string = 'teste2';
+valorString2 = valorAny;
 
-const andre: {nome: string, idade: number, profissao: string} = {
-    nome: 'André',
-    idade: 25,
-    profissao: 'pintor'
-};
-
-const paula: {nome: string, idade: number, profissao: string} = {
-    nome: 'Paula',
-    idade: 25,
-    profissao: 'desenvolvedora'
-};
-
-enum Profissao {
-    Professora,
-    Desenvolvedora,
-    Atriz,
-    JogadoraDeFutebol
-};
-
-interface IPessoa {
-    nome: string,
-    idade: number,
-    profissao?: Profissao
-};
-
-interface IEstudante extends IPessoa {
-    materias: string[]
-};
-
-const vanessa: IPessoa = {
-    nome: 'Vanessa',
-    idade: 23,
-    profissao: Profissao.Desenvolvedora
-};
-
-const maria: IPessoa = {
-    nome: 'Maria',
-    idade: 23,
-    profissao: Profissao.Desenvolvedora
-};
-
-const jessica: IEstudante = {
-    nome: 'Jéssica',
-    idade: 28,
-    profissao: Profissao.Desenvolvedora,
-    materias: ['Matemática Discreta', 'Programação']
-};
-
-const monica: IEstudante = {
-    nome: 'Mônica',
-    idade: 28,
-    materias: ['Matemática Discreta', 'Programação']
-};
-
-function listar(lista: string[]) {
-    for (const item of lista)
-        console.log('-', item);
+function somarStrings(string1: string, string2: string) {
+    console.log(string1 + string2);
 }
 
-listar(monica.materias);
+somarStrings(valorString, valorString2); // Vai dar 2!!! 🤦🏻‍♂️
