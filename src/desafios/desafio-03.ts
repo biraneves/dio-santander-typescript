@@ -7,12 +7,13 @@ campoSaldo.innerHTML = '0';
 
 function somarAoSaldo(soma: number): void {
     let saldoAtual = parseFloat(campoSaldo.innerHTML);
+    console.log(campoSaldo.innerHTML);
     saldoAtual += soma;
     campoSaldo.innerHTML = saldoAtual.toString();
 }
 
 function limparSaldo(): void {
-    campoSaldo.innerHTML = '';
+    campoSaldo.innerHTML = '0';
 }
 
 botaoAtualizar.addEventListener('click', () => {
