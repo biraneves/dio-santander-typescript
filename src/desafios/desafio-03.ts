@@ -7,7 +7,6 @@ campoSaldo.innerHTML = '0';
 
 function somarAoSaldo(soma: number): void {
     let saldoAtual = parseFloat(campoSaldo.innerHTML);
-    console.log(campoSaldo.innerHTML);
     saldoAtual += soma;
     campoSaldo.innerHTML = saldoAtual.toString();
 }
