@@ -1,7 +1,4 @@
 .vscode
-package.json
-package-lock.json
-tsconfig.json
 
 # Logs
 logs
